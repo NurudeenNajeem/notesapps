@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+          {% if user.is_authenticated %}
+               <h1> Hello, {{ user.username }} </h1>
+               <a href="{% url 'notes.list' %}" class="btn btn-primary">
+                    Checkout these smart notes!</a>
+          {% else %}
+               <h1> Hello, Guess </h1>
+               <a href="{% url 'home' %}" class="btn btn-primary">
+                    Checkout these smart notes!</a>
+          {% endif %}
+
+         
+    
+
+     <p>Today's date : {{ today }} </p>
+     
+{% endblock  %}
